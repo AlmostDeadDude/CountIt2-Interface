@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Count It 2!</title>
+</head>
+<body>
+    <h1>Count It 2!</h1>
+    <div class="parent">
+        <div class="div1">
+            <div class="card">
+                <p class="title">Predicted condition</p>
+            </div>
+        </div>
+        <div class="div2">
+            <div class="card">
+                <p class="title">Actual&nbsp;condition</p>
+            </div>
+        </div>
+        <div class="div3">
+            <div class="card">
+                <p class="title"><a href="https://en.wikipedia.org/wiki/Statistical_population" target="_blank" rel="noopener noreferrer">Total population</a></p>
+                <input type="number" id="Total" value="0" min="0" step="1" readonly>
+                <button id="copy"><i class="far fa-copy"></i></button>
+                <button id="refresh"><i class="fas fa-redo"></i></button>
+            </div>
+        </div>
+        <div class="div4">
+            <div class="card">
+                <p class="title">Positive (PP)</p>
+            </div>
+        </div>
+        <div class="div5">
+            <div class="card">
+                <p class="title">Negative (NP)</p>
+            </div>
+        </div>
+        <div class="div6">
+            <div class="card">
+                <p class="title">Positive (P)</p>
+            </div>
+        </div>
+        <div class="div7">
+            <div class="card">
+                <p class="title">Negative (N)</p>
+            </div>
+        </div>
+        <div class="div8">
+            <div class="card input">
+                <div class="buttons">        
+                    <button id="plus-TP" class="plus"><i class="fas fa-plus"></i></button>
+                    <button id="minus-TP" class="minus"><i class="fas fa-minus"></i></button>
+                </div>
+                <div class="inputWrapper">
+                    <p class="title"><a href="https://en.wikipedia.org/wiki/True_positive" target="_blank" rel="noopener noreferrer">True positive (TP)</a></p>
+                    <input type="number" id="TP" value="0" min="0" step="1" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="div9">
+            <div class="card input">
+                <div class="buttons">        
+                    <button id="plus-FN" class="plus"><i class="fas fa-plus"></i></button>
+                    <button id="minus-FN" class="minus"><i class="fas fa-minus"></i></button>
+                </div>
+                <div class="inputWrapper">
+                    <p class="title"><a href="https://en.wikipedia.org/wiki/False_negative" target="_blank" rel="noopener noreferrer">False negative (FN)</a></p>
+                    <input type="number" id="FN" value="0" min="0" step="1" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="div10">
+            <div class="card input">
+                <div class="buttons">        
+                    <button id="plus-FP" class="plus"><i class="fas fa-plus"></i></button>
+                    <button id="minus-FP" class="minus"><i class="fas fa-minus"></i></button>
+                </div>
+                <div class="inputWrapper">
+                    <p class="title"><a href="https://en.wikipedia.org/wiki/False_positive" target="_blank" rel="noopener noreferrer"></a>False positive (FP)</p>
+                    <input type="number" id="FP" value="0" min="0" step="1" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="div11">
+            <div class="card input">
+                <div class="buttons">        
+                    <button id="plus-TN" class="plus"><i class="fas fa-plus"></i></button>
+                    <button id="minus-TN" class="minus"><i class="fas fa-minus"></i></button>
+                </div>
+                <div class="inputWrapper">
+                    <p class="title"><a href="https://en.wikipedia.org/wiki/True_negative" target="_blank" rel="noopener noreferrer">True negative (TN)</a></p>
+                    <input type="number" id="TN" value="0" min="0" step="1" readonly>
+                </div>
+            </div>
+            <div id="extend"><i class="fas fa-caret-down"></i></div>
+        </div>
+        <div class="div12">
+            <div class="card">
+                <p class="title"><a href="https://en.wikipedia.org/wiki/Youden%27s_J_statistic" target="_blank" rel="noopener noreferrer">Informedness (BM)</a></p>
+                <input type="text" id="BM" value="0" readonly>
+            </div>
+        </div>
+        <div class="div13">
+            <div class="card">
+                <p class="title"><a href="https://en.wikipedia.org/wiki/Prevalence_threshold" target="_blank" rel="noopener noreferrer">Prevalence threshold (PT)</a></p>
+                <input type="text" id="PT" value="0" readonly>
+            </div>
+        </div>
+        <div class="div14">
+            <div class="card">
+                <p class="title"><a href="https://en.wikipedia.org/wiki/True_positive_rate" target="_blank" rel="noopener noreferrer">True positive rate (TPR)</a></p>
+                <input type="text" id="TPR" value="0" readonly>
+            </div>
+        </div>
+        <div class="div15">
+            <div class="card">
+                <p class="title"><a href="https://en.wikipedia.org/wiki/False_negative_rate" target="_blank" rel="noopener noreferrer">False negative rate (FNR)</a></p>
+                <input type="text" id="FNR" value="0" readonly>
+            </div>
+        </div>
+        <div class="div16">
+            <div class="card">
+                <p class="title"><a href="https://en.wikipedia.org/wiki/False_positive_rate" target="_blank" rel="noopener noreferrer">False positive rate (FPR)</a></p>
+                <input type="text" id="FPR" value="0" readonly>
+            </div>
+        </div>
+        <div class="div17">
+            <div class="card">
+                <p class="title"><a href="https://en.wikipedia.org/wiki/True_negative_rate" target="_blank" rel="noopener noreferrer">True negative rate (TNR)</a></p>
+                <input type="text" id="TNR" value="0" readonly>
+            </div>
+        </div>
+        <div class="div18">
+            <div class="card">
+                <p class="title"><a href="https://en.wikipedia.org/wiki/Prevalence" target="_blank" rel="noopener noreferrer">Prevalence</a></p>
+                <input type="text" id="Prevalence" value="0" readonly>
+            </div>
+        </div>
+        <div class="div19">
+            <div class="card">
+                <p class="title"><a href="https://en.wikipedia.org/wiki/Positive_predictive_value" target="_blank" rel="noopener noreferrer">Positive predictive value (PPV)</a></p>
+                <input type="text" id="PPV" value="0" readonly>
+            </div>
+        </div>
+        <div class="div20">
+            <div class="card">
+                <p class="title"><a href="https://en.wikipedia.org/wiki/False_omission_rate" target="_blank" rel="noopener noreferrer">False omission rate (FOR)</a></p>
+                <input type="text" id="FOR" value="0" readonly>
+            </div>
+        </div>
+        <div class="div21">
+            <div class="card">
+                <p class="title"><a href="https://en.wikipedia.org/wiki/Positive_likelihood_ratio" target="_blank" rel="noopener noreferrer">Positive likelihood ratio (LR+)</a></p>
+                <input type="text" id="LRPlus" value="0" readonly>
+            </div>
+        </div>
+        <div class="div22">
+            <div class="card">
+                <p class="title"><a href="https://en.wikipedia.org/wiki/Negative_likelihood_ratio" target="_blank" rel="noopener noreferrer">Negative likelihood ratio (LR-)</a></p>
+                <input type="text" id="LRMinus" value="0" readonly>
+            </div>
+        </div>
+        <div class="div23">
+            <div class="card">
+                <p class="title"><a href="https://en.wikipedia.org/wiki/Accuracy_and_precision#In_binary_classification" target="_blank" rel="noopener noreferrer">Accuracy (ACC)</a></p>
+                <input type="text" id="ACC" value="0" readonly>
+            </div>
+        </div>
+        <div class="div24">
+            <div class="card">
+                <p class="title"><a href="https://en.wikipedia.org/wiki/False_discovery_rate" target="_blank" rel="noopener noreferrer">False discovery rate (FDR)</a></p>
+                <input type="text" id="FDR" value="0" readonly>
+            </div>
+        </div>
+        <div class="div25">
+            <div class="card">
+                <p class="title"><a href="https://en.wikipedia.org/wiki/Negative_predictive_value" target="_blank" rel="noopener noreferrer">Negative predictive value (NPV)</a></p>
+                <input type="text" id="NPV" value="0" readonly>
+            </div>
+        </div>
+        <div class="div26">
+            <div class="card">
+                <p class="title">Markedness (MK)</p>
+                <input type="text" id="MK" value="0" readonly>
+            </div>
+        </div>
+        <div class="div27">
+            <div class="card">
+                <p class="title"><a href="https://en.wikipedia.org/wiki/Diagnostic_odds_ratio" target="_blank" rel="noopener noreferrer">Diagnostic odds ratio (DOR)</a></p>
+                <input type="text" id="DOR" value="0" readonly>
+            </div>
+        </div>
+        <div class="div28">
+            <div class="card">
+                <p class="title">Balanced accuracy (BA)</p>
+                <input type="text" id="BA" value="0" readonly>
+            </div>
+        </div>
+        <div class="div29">
+            <div class="card">
+                <p class="title"><a href="https://en.wikipedia.org/wiki/F1_score" target="_blank" rel="noopener noreferrer">F<sub>1</sub> score</a></p>
+                <input type="text" id="F1" value="0" readonly>
+            </div>
+        </div>
+        <div class="div30">
+            <div class="card">
+                <p class="title"><a href="https://en.wikipedia.org/wiki/Fowlkes%E2%80%93Mallows_index" target="_blank" rel="noopener noreferrer">Fowlkes-Mallows index (FM)</a></p>
+                <input type="text" id="FM" value="0" readonly>
+            </div>
+        </div>
+        <div class="div31">
+            <div class="card">
+                <p class="title"><a href="https://en.wikipedia.org/wiki/Matthews_correlation_coefficient" target="_blank" rel="noopener noreferrer">Matthews correlation coefficient (MCC)</a></p>
+                <input type="text" id="MCC" value="0" readonly>
+            </div>
+        </div>
+        <div class="div32">
+            <div class="card">
+                <p class="title"><a href="https://en.wikipedia.org/wiki/Jaccard_index#Jaccard_index_in_binary_classification_confusion_matrices" target="_blank" rel="noopener noreferrer"> Threat score (TS)</a></p>
+                <input type="text" id="TS" value="0" readonly>
+            </div>
+        </div>
+    </div>
+    <div id="notification"></div>
+    <footer> 
+        <small>
+            © Copyright <span id="year">2022</span>, <a href="https://github.com/AlmostDeadDude" target="_blank" rel="noopener noreferrer">Ivan Shiller</a> 
+        </small> 
+    </footer>
+    <small id="wikilink">Confusion matrix structure from <a href="https://en.wikipedia.org/wiki/Confusion_matrix" target="_blank" rel="noopener noreferrer">Wikipedia</a></small>
+    <script src="script.js"></script>
+</body>
+</html>
