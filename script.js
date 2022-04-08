@@ -40,6 +40,9 @@ const copy = document.querySelector('#copy');
 const notif = document.querySelector('#notification');
 
 const handleValueChange = () => {
+    //update total population
+    inputT.value = parseInt(inputTP.value) + parseInt(inputFN.value) + parseInt(inputFP.value) + parseInt(inputTN.value);
+
     //sum up predicted and actual positives and negatives
     let P = parseInt(inputTP.value) + parseInt(inputFN.value)
     let N = parseInt(inputFP.value) + parseInt(inputTN.value)
@@ -154,59 +157,55 @@ handleValueChange();
 
 plusTP.addEventListener('click', () => {
     inputTP.value = parseInt(inputTP.value) + 1;
-    inputT.value = parseInt(inputT.value) + 1;
     handleValueChange();
 });
 
 minusTP.addEventListener('click', () => {
     if (parseInt(inputTP.value) > 0 && parseInt(inputT.value) > 0) {
         inputTP.value = parseInt(inputTP.value) - 1;
-        inputT.value = parseInt(inputT.value) - 1;
         handleValueChange();
     }
 });
 
 plusFN.addEventListener('click', () => {
     inputFN.value = parseInt(inputFN.value) + 1;
-    inputT.value = parseInt(inputT.value) + 1;
     handleValueChange();
 });
 
 minusFN.addEventListener('click', () => {
     if (parseInt(inputFN.value) > 0 && parseInt(inputT.value) > 0) {
         inputFN.value = parseInt(inputFN.value) - 1;
-        inputT.value = parseInt(inputT.value) - 1;
         handleValueChange();
     }
 });
 
 plusFP.addEventListener('click', () => {
     inputFP.value = parseInt(inputFP.value) + 1;
-    inputT.value = parseInt(inputT.value) + 1;
     handleValueChange();
 });
 
 minusFP.addEventListener('click', () => {
     if (parseInt(inputFP.value) > 0 && parseInt(inputT.value) > 0) {
         inputFP.value = parseInt(inputFP.value) - 1;
-        inputT.value = parseInt(inputT.value) - 1;
         handleValueChange();
     }
 });
 
 plusTN.addEventListener('click', () => {
     inputTN.value = parseInt(inputTN.value) + 1;
-    inputT.value = parseInt(inputT.value) + 1;
     handleValueChange();
 });
 
 minusTN.addEventListener('click', () => {
     if (parseInt(inputTN.value) > 0 && parseInt(inputT.value) > 0) {
         inputTN.value = parseInt(inputTN.value) - 1;
-        inputT.value = parseInt(inputT.value) - 1;
         handleValueChange();
     }
 });
+
+document.querySelectorAll('input[type="number"]').forEach(input => {
+    input.addEventListener('input', handleValueChange);
+})
 
 refresh.addEventListener('click', () => {
     inputTP.value = 0;
